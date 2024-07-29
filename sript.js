@@ -170,6 +170,9 @@ while(!found){
   searchSpecialty();
 }
 
+
+
+// ------------- days living --------------------
 function calculateLifeDays(){
   let givenBirthdate = prompt("Enter your birthdate (YYYY-MM-DD)");
   let birthdate = new Date(givenBirthdate);
