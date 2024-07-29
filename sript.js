@@ -1,72 +1,72 @@
-let users = {};
-createEmployee();
+// let users = {};
+// createEmployee();
 
-function createEmployee() {
-  let countEmployee = parseInt(prompt("Enter number of employee..."));
+// function createEmployee() {
+//   let countEmployee = parseInt(prompt("Enter number of employee..."));
 
-  for (let i = 1; i <= countEmployee; i++) {
-    var user = "user" + `${i}`;
-    let name = prompt("Enter name")
-    let lastname = prompt("Enter lastname")
-    let age = parseInt(prompt("Enter age"))
-    let gender = prompt("Enter your gender")
-    let salary = parseInt(prompt("Enter salary"))
-    let countDepartment = parseInt(prompt("Enter how many department are you working?"));
-    let department = [];
-    for(let j = 0; j < countDepartment; j++){
-      department.push(prompt("Enter name of department"));
-    }
-    users[user] = {
-      name: name,
-      lastname: lastname,
-      age: age,
-      gender: gender,
-      salary: salary,
-      department: department
-    };
-  }
-}
+//   for (let i = 1; i <= countEmployee; i++) {
+//     var user = "user" + `${i}`;
+//     let name = prompt("Enter name")
+//     let lastname = prompt("Enter lastname")
+//     let age = parseInt(prompt("Enter age"))
+//     let gender = prompt("Enter your gender")
+//     let salary = parseInt(prompt("Enter salary"))
+//     let countDepartment = parseInt(prompt("Enter how many department are you working?"));
+//     let department = [];
+//     for(let j = 0; j < countDepartment; j++){
+//       department.push(prompt("Enter name of department"));
+//     }
+//     users[user] = {
+//       name: name,
+//       lastname: lastname,
+//       age: age,
+//       gender: gender,
+//       salary: salary,
+//       department: department
+//     };
+//   }
+// }
 
-console.log(users);
+// console.log(users);
 
 // Filters
 
 // Data for testing
 
-// let users ={
-//   user1:{
-//     name: "Zahra",
-//     lastname: "Malikzada",
-//     age: 23,
-//     salary: 20000,
-//     department: ["Project manager", "IT"],
-//     isMale: false
-//   },
-//   user2:{
-//     name: "Samir",
-//     lastname: "Ziyadov",
-//     age: 38,
-//     salary: 24000,
-//     department: ["Business manager"],
-//     isMale: true
-//   },
-//   user3:{
-//     name: "Farida",
-//     lastname: "Aliyeva",
-//     age: 22,
-//     salary: 10000,
-//     department: ["Economics", "Specialist", "IT"],
-//     isMale: false
-//   },
-//   user4:{
-//     name: "Terlan",
-//     lastname: "Bunyadov",
-//     age: 32,
-//     salary: 15000,
-//     department: ["CEO", "FullStack"],
-//     isMale: true
-//   }
-// }
+let users ={
+  user1:{
+    name: "Zahra",
+    lastname: "Malikzada",
+    age: 23,
+    salary: 20000,
+    department: ["Project manager", "IT"],
+    isMale: false
+  },
+  user2:{
+    name: "Samir",
+    lastname: "Ziyadov",
+    age: 38,
+    salary: 24000,
+    department: ["Business manager"],
+    isMale: true
+  },
+  user3:{
+    name: "Farida",
+    lastname: "Aliyeva",
+    age: 22,
+    salary: 10000,
+    department: ["Economics", "Specialist", "IT"],
+    isMale: false
+  },
+  user4:{
+    name: "Terlan",
+    lastname: "Bunyadov",
+    age: 32,
+    salary: 15000,
+    department: ["CEO", "FullStack"],
+    isMale: true
+  }
+}
 
 // Find older employee
 
@@ -169,3 +169,21 @@ while(found){
   alert("Wrong specialty! Enter again...");
   searchSpecialty();
 }
+
+function calculateLifeDays(){
+  let givenBirthdate = prompt("Enter your birthdate (YYYY-MM-DD)");
+  let birthdate = new Date(givenBirthdate);
+  person = {
+    birthdate: birthdate,
+    calculateDays: ()=>{
+      let currentTime = new Date();
+      let difference = currentTime - person.birthdate;
+      let amountOfDays = Math.floor(difference / (1000 * 60 * 60 * 24))
+      return amountOfDays;
+    }
+  }
+  console.log(`You are ${person.calculateDays()} days in the world`)
+}
+
+calculateLifeDays()
+
