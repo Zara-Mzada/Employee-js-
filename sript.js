@@ -165,7 +165,7 @@ function searchSpecialty(){
     }
   }
 }
-while(found){
+while(!found){
   alert("Wrong specialty! Enter again...");
   searchSpecialty();
 }
